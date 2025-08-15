@@ -1,0 +1,101 @@
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-hand-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+
+}
+.hero-left{
+    flex:1;
+    justify-content: center;
+    display: flex;
+    gap:20px;
+    flex-direction: column;
+    padding-left: 100px;
+    line-height: 1.1;
+}
+.hero-right{
+    flex:1;
+    justify-content: center;
+    display: flex;
+    
+}
+/* .button-primary{
+height:200px;
+color:yellow;
+} */
+ .h2{
+    margin-bottom: 50px;
+ }
+.hero-right img {
+  width: 100%;
+  max-width: 500px;   /* or adjust as needed */
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;      /* removes extra bottom space */
+}
+
+ 
+ @media (max-width: 600px) {
+  .hero {
+    flex-direction: column;
+    height: auto;
+    padding: 40px 20px;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .hero-left {
+    padding-left: 0;
+    align-items: center;
+  }
+
+  .hero-right {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-hand-icon {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+/* 
+  .button-primary {
+    font-size: 16px;
+    padding: 10px 20px;
+    /* Add other styles if button is re-enabled */
+  /* } */ */
+
+
+  .button-primary {
+    font-size: 16px;
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 200px;
+  }
+  
+.hero-right img {
+  /* max-width: 100%; */
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  max-width: 500px;
+}
+
+    
+  
+}

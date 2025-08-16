@@ -12,15 +12,15 @@ const Footer = () => {
           <p>Your one-stop online store for everything you need.</p>
         </div>
 
-        {/* Quick Links */}
+        {/* links */}
         <div className="footer-section">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="/">Home</a></li>
+            <li><Link to="/">Home</Link></li>
             {/* <li><a href="/shop" >Shop</a></li> */}
             <li><Link to="/">Shop</Link></li>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
           </ul>
         </div>
 
@@ -28,10 +28,10 @@ const Footer = () => {
         <div className="footer-section">
           <h4>Customer Service</h4>
           <ul>
-            <li><a href="/faq">FAQ</a></li>
-            <li><a href="/shipping">Shipping & Returns</a></li>
-            <li><a href="/privacy">Privacy Policy</a></li>
-            <li><a href="/terms">Terms & Conditions</a></li>
+            <li><Link to="/faq">FAQ</Link></li>
+            <li><Link to="/shipping">Shipping & Returns</Link></li>
+            <li><Link to="/privacy">Privacy Policy</Link></li>
+            <li><Link to="/terms">Terms & Conditions</Link></li>
           </ul>
         </div>
 
@@ -41,9 +41,9 @@ const Footer = () => {
           <p>Email: support@mwardrobe.com</p>
           <p>Phone: 9762214953</p>
           <div className="social-icons">
-            <a href="#"><span>🔵</span></a>
-            <a href="#"><span>🐦</span></a>
-            <a href="#"><span>📸</span></a>
+            <Link to="#"><span>🔵</span></Link>
+            <Link to="#"><span>🐦</span></Link>
+            <Link to="#"><span>📸</span></Link>
           </div>
         </div>
       </div>

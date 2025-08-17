@@ -1,7 +1,8 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { MdDelete } from "react-icons/md";
-import cartEmpty from "../../assets/imgsrc/cartEmpty.png"
+import cartEmpty from "../../assets/imgsrc/cartEmpty.png";
+import { useNavigate } from "react-router-dom";
 import "./cart.css";
 import {
   removeCart,
@@ -13,6 +14,7 @@ import api from "../../api/api";
 export default function Cart() {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleRemove = (id) => {
     dispatch(removeCart(id));
@@ -31,32 +33,49 @@ export default function Cart() {
     0
   );
 
+  const handlePlaceOrder = () => {
+    if (cart.products.length > 0) {
+      navigate("/address");
+    }
+  };
+
   return (
     <div className="cart-container">
       <h2>Shopping Cart</h2>
 
       {cart.products.length === 0 ? (
         <div className="cartImg">
-        <img src={cartEmpty} alt=""/>
-        <h1 className="empty-cart">Your cart is empty</h1>
+          <img src={cartEmpty} alt="" />
+          <h1 className="empty-cart">Your cart is empty</h1>
         </div>
       ) : (
         <>
-          
           <div className="cart-items">
             {cart.products.map((product) => (
               <div key={product.id} className="cart-item">
                 <div className="cart-product">
-                  <img src={product.image} alt=""/>
+                  <img src={product.image} alt="" />
                   <div className="product-name">
-                  <p>{product.name}</p>
+                    <p>{product.name}</p>
                   </div>
                 </div>
 
                 <div className="cart-quantity">
-                  <button onClick={() => handleDecrease(product.id)} className="btn btn-success"> - </button>
-                  <span >{product.quantity}</span>
-                  <button onClick={() => handleIncrease(product.id)} className="btn btn-success"> + </button>
+                  <button
+                    onClick={() => handleDecrease(product.id)}
+                    className="btn btn-success"
+                  >
+                    {" "}
+                    -{" "}
+                  </button>
+                  <span>{product.quantity}</span>
+                  <button
+                    onClick={() => handleIncrease(product.id)}
+                    className="btn btn-success"
+                  >
+                    {" "}
+                    +{" "}
+                  </button>
                 </div>
                 <div className="product-total">
                   <p>₹{product.quantity * product.price}</p>
@@ -73,8 +92,13 @@ export default function Cart() {
             ))}
           </div>
 
-          <div className="cart-total">
-            <h3>Total: ₹{totalPrice}</h3>
+          <div className="cart-footer">
+            <div className="cart-total">
+              <h3>Total: ₹{totalPrice}</h3>
+            </div>
+            <button onClick={handlePlaceOrder} className="btn btn-success">
+              Place Order
+            </button>
           </div>
         </>
       )}

@@ -1,4 +1,3 @@
-
 // import { store } from "./app/store";
 import { createRoot } from "react-dom/client";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -17,7 +16,9 @@ import Men from "./components/men/Men";
 // import Women from "./components/women/Women";
 import Kids from "./components/kids/Kids";
 import FilterData from "./pages/filter/FilterData";
-
+import Address from "./pages/address/Address";
+import Summary from "./pages/summary/SummaryPage";
+import Thankyou from "./pages/thank you/Thankyou";
 
 import { Suspense, lazy } from "react";
 const ProductsLazy = lazy(() => import("./assets/all_product"));
@@ -33,17 +34,13 @@ const router = createBrowserRouter([
       {
         path: "/",
         // element: <Shop />,
-        element:(
-        <Suspense fallback={<LoaderShop/>}>
-        <Shop/>
-        </Suspense>
-        )
-
+        element: (
+          <Suspense fallback={<LoaderShop />}>
+            <Shop />
+          </Suspense>
+        ),
       },
 
-        
-      
-      
       {
         path: "men",
         element: <Men />,
@@ -51,12 +48,11 @@ const router = createBrowserRouter([
       {
         path: "women",
         // element: <Women />,
-        element:(
-        <Suspense fallback={<Loader/>}>
-        <Women />
-        </Suspense>
-        )
-
+        element: (
+          <Suspense fallback={<Loader />}>
+            <Women />
+          </Suspense>
+        ),
       },
 
       {
@@ -68,24 +64,30 @@ const router = createBrowserRouter([
         path: "login",
         element: <Login />,
       },
-{
+      {
         path: "cart",
         element: <Cart />,
       },
       {
-        path:"filter-data",
-        element:<FilterData/>
+        path: "filter-data",
+        element: <FilterData />,
       },
-
-      
+      {
+        path: "/address",
+        element: <Address />,
+      },
+      {
+        path: "/summary",
+        element: <Summary />,
+      },
+      {
+        path: "/thank you",
+        element: <Thankyou />,
+      },
     ],
   },
 ]);
 
 createRoot(document.getElementById("root")).render(
-  
   <RouterProvider router={router} />
-
-
-  
 );

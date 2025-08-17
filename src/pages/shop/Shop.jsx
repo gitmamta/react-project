@@ -7,6 +7,7 @@ import data_product from "../../assets/data";
 import all_product from "../../assets/all_product";
 
 
+
 export default function Shop(){
     return(
 

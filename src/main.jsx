@@ -19,6 +19,7 @@ import FilterData from "./pages/filter/FilterData";
 import Address from "./pages/address/Address";
 import Summary from "./pages/summary/SummaryPage";
 import Thankyou from "./pages/thank you/Thankyou";
+import About from "./pages/about/About";
 
 import { Suspense, lazy } from "react";
 const ProductsLazy = lazy(() => import("./assets/all_product"));
@@ -83,6 +84,10 @@ const router = createBrowserRouter([
       {
         path: "/thankyou",
         element: <Thankyou />,
+      },
+       {
+        path: "/about",
+        element: <About/>,
       },
     ],
   },

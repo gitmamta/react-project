@@ -103,7 +103,10 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 4px;
+
+  padding: 10px 16px;
+  font-size: 16px;
+  border-radius: 4px;
 }
 
 /* === Footer Section (Total + Button) === */

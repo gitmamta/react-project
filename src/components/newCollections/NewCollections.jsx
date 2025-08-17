@@ -1,7 +1,9 @@
 import "./newcollection.css";
+
 import all_product from "../../assets/all_product";
 import { addCart } from "../store/CartSlice";
 import { useDispatch } from "react-redux";
+
 export default function NewCollection() {
   const dispatch = useDispatch();
   return (

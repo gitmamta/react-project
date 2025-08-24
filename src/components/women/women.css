@@ -1,64 +1,58 @@
-.women-page{
-    gap:10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height:100vh;
-    padding-top:60px;
-
+.women-page {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  padding-top: 60px;
 }
-.women-page h1{
-    color: #171717;
-    font-size:50px;
-    font-weight:600;
-
+.women-page h1 {
+  color: #171717;
+  font-size: 50px;
+  font-weight: 600;
 }
-.women-page hr{
-    width:300px;
-    height:6px;
-    background: #252525;
-    border-radius:10px;
-
+.women-page hr {
+  width: 300px;
+  height: 6px;
+  background: #252525;
+  border-radius: 10px;
 }
-.women-img img{
-    height:500px;
-    width:100%;
-    padding-bottom: 50px;
+.women-img img {
+  height: 400px;
+  width: 100%;
+  margin-bottom: 50px;
+  object-fit: cover;
 }
-.women-items{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin-top:50px;
-    gap:30px;
-    
+.women-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-top: 50px;
+  gap: 30px;
 }
-.women-item p{
-    color:brown;
-    font-weight:700;
+.women-item p {
+  color: brown;
+  font-weight: 700;
 }
-.women-item img{
-    margin-bottom: 60px;
-
-
-width: 250px;       
-  height: auto;       
+.women-item img {
+  width: 250px;
+  height: auto;
   margin-bottom: 60px;
-  object-fit: cover; 
+  object-fit: cover;
   border-radius: 6px;
   cursor: pointer;
-
 }
-.women-item .price{
-    color:#171717;
-    font-weight: 600;
+.women-item .price {
+  color: #171717;
+  font-weight: 600;
 }
-.women-item .offer{
-    color:green;
+.women-item .offer {
+  color: green;
 
-    font-weight: 400;
+  font-weight: 400;
 }
 
 @media (max-width: 600px) {
+  
   .women-page {
     padding-top: 30px;
     height: auto;
@@ -78,22 +72,25 @@ width: 250px;
   .women-img img {
     height: auto;
     width: 100%;
-    max-height: 300px;
-    padding-bottom: 30px;
-    object-fit: cover;
+    margin-bottom: 30px;
   }
 
   .women-items {
-    grid-template-columns: 1fr; /* 1 item per row */
+    grid-template-columns: 1fr;
     gap: 20px;
+    justify-items: center;
+  }
+  .women-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .women-item img {
     width: 100%;
-    max-width: 250px;
     height: auto;
-    margin: 0 auto 30px auto;
-    display: block;
+    margin-bottom: 30px;
   }
 
   .women-item p,

@@ -1,6 +1,6 @@
 
 .header {
-  background-color: #00695c;
+  background-color: #f8f9fa;
   width: 100%;
   overflow-x: hidden;
 }
@@ -13,7 +13,7 @@
   color: #0d6efd;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   border-bottom: 1px solid #dce7f7;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   overflow-x: hidden;
 }
 
@@ -53,7 +53,7 @@
   justify-content: center;
   cursor: pointer;
   gap: 3px;
-  color: #333333;
+  /* color: #333333; */
 }
 
 .nav-menu li a {
@@ -79,9 +79,12 @@
 
 .search {
   padding: 6px 10px;
+  height: 34px; /* match button height */
+  font-size: 14px;
   border-radius: 5px;
   border: 1px solid #ccc;
   outline: none;
+  margin:0;
 }
 
 
@@ -89,6 +92,10 @@
   display: flex;
   align-items: center;
   gap: 30px;
+}
+.nav-search-form {
+  display: flex;
+  align-items: center;
 }
 
 .nav-cart button {
@@ -116,28 +123,18 @@
 
 
 .cart-icon-container img {
-  height: auto;
-  width: 4rem;
-  max-width: 100%;
-  object-fit: contain;
+
+  height:34px;
+  width:34px;
+
+  object-fit:cover;
+  
+    
+    cursor: pointer;
 }
 
 
-.nav-cart-count {
-  position: absolute;
-  top: -6px;
-  right: -6px;
-  width: 18px;
-  height: 18px;
-  background-color: white;
-  color: red;
-  font-size: 12px;
-  font-weight: bold;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 
 
 .nav-cart-count {
@@ -177,12 +174,10 @@
 
 
 @media (max-width: 600px) {
-  /* Hamburger visible */
   .hamburger {
     display: flex;
   }
 
-  /* Nav menu hidden by default */
   .nav-menu {
     position: fixed;
     top: 0;
@@ -200,7 +195,6 @@
     text-align: left;
   }
 
-  /* Nav menu active (slide in) */
   .nav-menu.active {
     transform: translateX(0);
   }
@@ -214,9 +208,16 @@
     width: 100%;
   }
 
-  /* Responsive nav-cart */
   .nav-cart {
+    display: flex;
+    align-items: center;    /* center vertically */
     gap: 15px;
+  }
+
+  .nav-cart > * {
+    display: flex;
+    align-items: center;
+    height: 30px; /* match smaller button/input height */
   }
 
   .nav-logo img {
@@ -225,18 +226,20 @@
   }
 
   .nav-logo p {
-    font-size: 22px;
+    font-size: 18px;
   }
 
   .cart-icon-container img {
-    width: 2.5rem;
+    height: 30px;  /* smaller icon */
+    width: 30px;
+    object-fit: cover;
+    cursor: pointer;
   }
 
   .nav-cart-count {
     width: 18px;
     height: 18px;
     font-size: 10px;
-   
   }
 
   .nav-cart button {
@@ -248,5 +251,15 @@
   .navbar {
     gap: 10px;
     padding: 10px;
+    align-items: center;  /* keep vertical centering */
+  }
+
+  .search {
+    width: 100%;
+    max-width: 200px;
+    height: 30px; /* match smaller height */
+    padding: 5px 10px;
+    margin: 0;
+    font-size: 13px;
   }
 }

@@ -13,7 +13,7 @@ const dispatch=useDispatch();
         </div>
         <div className="popular-item">
           {data_product.map((element, index) => (
-            <div key={element.id} className="element-align">
+            <div key={element.id} className="popular-align">
               <img src={element.image}/>
               <p>{element.name}</p>
               <p className="price">₹{element.old_price}</p>

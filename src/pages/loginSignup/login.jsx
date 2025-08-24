@@ -2,6 +2,7 @@ import { signin } from "../../schema/index";
 import "./login.css";
 import { useState } from "react";
 import { useFormik } from "formik";
+import { useNavigate } from "react-router-dom";
 
 let initialValue = {
   name: "",
@@ -13,6 +14,7 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const [successMsg, setSuccessMsg] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
+  const navigate=useNavigate();
   const { handleChange, handleBlur, handleSubmit, values, errors, touched } =
     useFormik({
       initialValues: initialValue,
@@ -34,6 +36,7 @@ export default function Login() {
         if (res.ok) {
           setSuccessMsg("✅ Form submitted successfully");
           resetForm();
+          navigate("/address")
         } else {
           setErrorMsg("Submission failed");
         }

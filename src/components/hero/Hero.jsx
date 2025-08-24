@@ -12,9 +12,9 @@ export default function Hero(){
         <h1>SMART SHOPPING </h1>
         <h2>TRUSTED BY MILLIONS</h2>
         
-        <div className="button-primary">
-            <button type="submit" className="btn btn-primary btn-lg">SHOP NOW</button>
-        </div>
+       
+            <button type="submit" className="custom-button">SHOP NOW</button>
+        
 
     </div>
 

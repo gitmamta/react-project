@@ -1,44 +1,37 @@
 import "./nav.css";
-import {useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/imgsrc/logo.png";
 import cart_icon from "../../assets/imgsrc/cart_icon.png";
 
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setSearchQuery } from "../../components/products/ProductSllice"
-
+import { setSearchQuery } from "../../components/products/ProductSllice";
 
 export default function Navbar() {
   const cartItems = useSelector((state) => state.cart);
-  //  const searchQuery = useSelector((state) => state.products.searchQuery);
-  const[search,setSearch]=useState("")
-  const dispatch=useDispatch()
-  const navigate=useNavigate()
-  const location=useLocation()
-
+  
+  const [search, setSearch] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const [menuOpen, setMenuOpen] = useState(false); // <-- hamburger toggle
   useEffect(() => {
     // Clear local search input and Redux search query on route change
-    setSearch('');
-    dispatch(setSearchQuery(''));
+    setSearch("");
+    dispatch(setSearchQuery(""));
   }, [location.pathname, dispatch]);
 
+  const handleSearch = (e) => {
+    e.preventDefault();
+    dispatch(setSearchQuery(search));
 
-  const handleSearch=(e)=>{
-    e.preventDefault()
-   dispatch(setSearchQuery(search)); 
-
- navigate('/filter-data')
-
-  }
+    navigate("/filter-data");
+  };
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-
-
-  
 
   return (
     <>
@@ -49,55 +42,60 @@ export default function Navbar() {
             <p>MWardrobe</p>
           </div>
 
-
-{/* Hamburger Icon */}
+          {/* Hamburger Icon */}
           <div className="hamburger" onClick={toggleMenu}>
             <span className="bar"></span>
             <span className="bar"></span>
             <span className="bar"></span>
           </div>
 
-
-
-<ul className={`nav-menu ${menuOpen ? "active" : ""}`}>
-
-
-          {/* <ul className="nav-menu"> */}
+          <ul className={`nav-menu ${menuOpen ? "active" : ""}`}>
+            {/* <ul className="nav-menu"> */}
             <li>
-              <NavLink to="/" onClick={()=>setMenuOpen(false)}>Shop</NavLink>
+              <NavLink to="/" onClick={() => setMenuOpen(false)}>
+                Shop
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/men" onClick={()=>setMenuOpen(false)}>Men</NavLink>
+              <NavLink to="/men" onClick={() => setMenuOpen(false)}>
+                Men
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/women" onClick={()=>setMenuOpen(false)}>Women</NavLink>
+              <NavLink to="/women" onClick={() => setMenuOpen(false)}>
+                Women
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/kids" onClick={()=>setMenuOpen(false)}>Kids</NavLink>
+              <NavLink to="/kids" onClick={() => setMenuOpen(false)}>
+                Kids
+              </NavLink>
             </li>
           </ul>
 
-          <div>
-            <form action="" onSubmit={handleSearch}>
-            <input type="search" name="search" className="search" placeholder="search products" onChange={(e)=>setSearch(e.target.value)} size="14"/>
-            </form>
-          </div>
           <div className="nav-cart">
-            <NavLink to="/login">
-              <button>login</button>
-            </NavLink>
+  <form onSubmit={handleSearch} className="nav-search-form">
+    <input
+      type="search"
+      className="search"
+      placeholder="search products"
+      onChange={(e) => setSearch(e.target.value)}
+    />
+  </form>
 
-            
-             <NavLink to="/cart">
+  <NavLink to="/login">
+    <button>Login</button>
+  </NavLink>
+
+  <NavLink to="/cart">
     <div className="cart-icon-container">
       <img src={cart_icon} alt="Cart" />
       <div className="nav-cart-count">{cartItems.products.length}</div>
     </div>
   </NavLink>
 </div>
-          
-
         </div>
+        
       </header>
     </>
   );

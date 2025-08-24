@@ -1,55 +1,59 @@
-.kid-page{
-    gap:10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height:100vh;
-    padding-top:60px;
+.kid-page {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  padding-top: 60px;
+}
+.kid-page h1 {
+  color: #171717;
+  font-size: 50px;
+  font-weight: 600;
+}
+.kid-page hr {
+  width: 300px;
+  height: 6px;
+  background: #252525;
+  border-radius: 10px;
+}
+.kid-img img {
+  height: 400px;
+  width: 100%;
+  margin-bottom: 50px;
+  object-fit: cover;
+}
+.kid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 
+.kid-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-top: 50px;
+  gap: 30px;
 }
-.kid-page h1{
-    color: #171717;
-    font-size:50px;
-    font-weight:600;
-
+.kid-item p {
+  color: brown;
+  font-weight: 700;
 }
-.kid-page hr{
-    width:300px;
-    height:6px;
-    background: #252525;
-    border-radius:10px;
-
+.kid-item img {
+  height:250px;
+  width:100%;
+  border-radius: 6px;
+  margin-bottom: 50px;
+  object-fit: cover;
 }
-.kid-img img{
-    height:400px;
-    width:100%;
-    padding-bottom: 50px;
+.kid-item .price {
+  color: #171717;
+  font-weight: 600;
 }
-.kid-items{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin-top:50px;
-    gap:30px;
-}
-.kid-item p{
-    color:brown;
-    font-weight:700;
-}
-.kid-item img{
-    height:250px;
-    width:auto;
-    object-fit:cover;
-    border-radius:6px;
-
-    margin-bottom: 60px;
-}
-.kid-item .price{
-    color:#171717;
-    font-weight: 600;
-}
-.kid-item .offer{
-    color:green;
-    font-weight: 400;
+.kid-item .offer {
+  color: green;
+  font-weight: 400;
 }
 
 @media (max-width: 600px) {
@@ -71,23 +75,22 @@
 
   .kid-img img {
     width: 100%;
-    max-height: 300px;
+    max-height: 250px;
     height: auto;
-    padding-bottom: 30px;
-    object-fit: cover;
+    margin-bottom: 30px;
   }
 
   .kid-items {
-    grid-template-columns: 1fr; /* single column on small screens */
+    grid-template-columns: 1fr;
     gap: 20px;
+    justify-items: center;
   }
 
   .kid-item img {
     width: 100%;
-    max-width: 250px;
+    /* max-width: 250px; */
     height: auto;
-    margin: 0 auto 30px auto;
-    display: block;
+    margin-bottom: 30px;
   }
 
   .kid-item p,
@@ -95,6 +98,4 @@
   .kid-item .offer {
     text-align: center;
   }
-  
-  
 }

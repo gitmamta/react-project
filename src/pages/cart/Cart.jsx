@@ -35,7 +35,7 @@ export default function Cart() {
 
   const handlePlaceOrder = () => {
     if (cart.products.length > 0) {
-      navigate("/address");
+      navigate("/login");
     }
   };
 

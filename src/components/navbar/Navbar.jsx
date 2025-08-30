@@ -83,9 +83,9 @@ export default function Navbar() {
     />
   </form>
 
-  <NavLink to="/login">
+  {/* <NavLink to="/login">
     <button>Login</button>
-  </NavLink>
+  </NavLink> */}
 
   <NavLink to="/cart">
     <div className="cart-icon-container">
